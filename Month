@@ -1,0 +1,72 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int num;
+        Console.Write("Input the num: ");
+        num = Convert.ToInt32(Console.ReadLine());
+
+        switch (num)
+        {
+            case 1:
+                PrintMonth("January", 31);
+                break;
+            case 2:
+                PrintMonth("February", 28);
+                break;
+            case 3:
+                PrintMonth("March", 31);
+                break;
+            case 4:
+                PrintMonth("April", 30);
+                break;
+            case 5:
+                PrintMonth("May", 31);
+                break;
+            case 6:
+                PrintMonth("June", 30);
+                break;
+            case 7:
+                PrintMonth("July", 31);
+                break;
+            case 8:
+                PrintMonth("August", 31);
+                break;
+            case 9:
+                PrintMonth("September", 30);
+                break;
+            case 10:
+                PrintMonth("October", 31);
+                break;
+            case 11:
+                PrintMonth("November", 30);
+                break;
+            case 12:
+                PrintMonth("December", 31);
+                break;
+            default:
+                Console.WriteLine("Invalid month number");
+                break;
+        }
+    }
+
+    static void PrintMonth(string monthName, int days)
+    {
+        Console.WriteLine("{monthName}");
+        Console.WriteLine(new string('=', 81));
+        Console.WriteLine("{0,10}{1,10}{2,10}{3,10}{4,10}{5,10}{6,10}",
+                          "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+
+        for (int i = 1; i <= days; i++)
+        {
+            Console.Write("{0,10}", i);
+            if (i % 7 == 0)
+            {
+                Console.WriteLine();
+            }
+        }
+        Console.WriteLine();
+    }
+}
